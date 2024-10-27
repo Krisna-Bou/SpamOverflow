@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:8080
+
+### Health
+GET {{baseUrl}}/api/v1/health
+
+### List All Todo
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/emails?limit=20&offset=0&start=2024-02-21T13:10:05Z&end=2024-02-21T14:10:05Z&from=no-reply@uq.edu.au&to=support@uq.edu.au&state=scanned&only_malicious=true
+
+### List All Todos
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/emails?start=206-02-21T13:10:05Z
+
+### List All Todos
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/emails?limit=100&offset=5
+### List All Todos
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/emails
+
+### Get a spescific Todo
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/emails/1
+
+### Recipients
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/reports/recipients
+
+### Domains
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/reports/domains
+
+### Actors
+GET {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/reports/actors
+
+### Create a Todo
+POST {{baseUrl}}/api/v1/customers/104df71d-e501-4e37-bd69-a0023bffeb5a/emails
+Content-Type: application/json
+
+{
+  "metadata" : {
+    "spamhammer" : "0|8"
+  },
+  "contents" : {
+    "subject" : "Important information about your account.",
+    "from" : "abc@uq.edu.au",
+    "to" : "ysas-reply@uq.edu.au",
+    "body" : "Dear customer,\nWe have noticed some suspicious activity on your account. Please click [here](https://scam-chesdfck.uq.edu.au?userId=uqehugh3) https://google.com https://google.com to reset your password."
+  }
+}
